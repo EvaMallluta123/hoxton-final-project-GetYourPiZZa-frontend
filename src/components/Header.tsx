@@ -9,7 +9,7 @@ export function Header() {
       icon: "home",
     },
     {
-      type:"aboutus",
+      type:"about",
         name: "About",
         icon: "diversity_1",
       },
