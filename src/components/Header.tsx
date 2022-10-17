@@ -24,7 +24,7 @@ export function Header() {
       icon: "grade",
     },
     {
-      type:"sign-in",
+      type:"signIn",
       name: "Sign_In",
       icon: "account_circle",
     },
