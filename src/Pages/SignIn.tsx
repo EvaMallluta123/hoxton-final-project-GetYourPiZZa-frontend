@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 
 
 export function SignIn ({ signIn }) {
 const[currentUser, setCurrentUser]= useState(null)
-
+const navigate = useNavigate();
 function signInn(data){
 setCurrentUser(data.user)
 localStorage.token=data.token
+navigate("/home");
 }
 function signOut(){
     setCurrentUser(null)

@@ -5,6 +5,9 @@ import { Home } from './Pages/Home'
 import { About } from './Pages/About'
 import { SignIn } from './Pages/SignIn'
 import { useState, useEffect } from 'react'
+import { Order } from './Pages/Order'
+import { Menu } from './Pages/Menu'
+import { PizzaDetails } from './Pages/PizzaDetails'
 
 export default function App () {
   const [currentUser, setCurrentUser] = useState(null)
@@ -21,7 +24,7 @@ export default function App () {
 
   useEffect(() => {
     if (localStorage.token) {
-      fetch('http://localhost:5678/validate', {
+      fetch('http://localhost:4000/validate', {
         headers: {
           Authorization: localStorage.token
         }
@@ -45,6 +48,14 @@ export default function App () {
       <Route path='/home' element={<Home />} />
        <Route path='/home' element={currentUser ? <Home/> : <Navigate to='/signIn'/>} />
     <Route path='/about' element={<About />} />
+    <Route
+            path='/products/:id'
+            element={<PizzaDetails  />}
+          />
+    {/* <Route path='/about' element={<Order />} /> */}
+    <Route path='/menu' element={<Menu />} />
+
+
     <Route path='/signIn' element={<SignIn signIn={SignIn} />} />
 
 

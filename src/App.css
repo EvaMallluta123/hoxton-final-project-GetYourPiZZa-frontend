@@ -179,4 +179,24 @@
 .sign-in button:active {
   filter: brightness(0.5);
 }
-
+/* menu */
+.pizza-item{
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-row-gap: 2rem;
+  height: 100%;
+  padding: 1rem;
+  place-items: center;
+  background-color: var(--header_color);
+}
+.pizza-item h4{
+  color: rgb(37, 37, 37);
+}
+.pizza-ul{
+display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 20px;
+ list-style: none;
+}
