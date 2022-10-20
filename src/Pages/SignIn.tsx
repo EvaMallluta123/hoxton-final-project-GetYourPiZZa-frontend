@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export function SignIn ({ signIn }) {
 const[currentUser, setCurrentUser]= useState(null)
 const navigate = useNavigate();
+
 function signInn(data){
 setCurrentUser(data.user)
 localStorage.token=data.token
@@ -65,7 +66,8 @@ function signOut(){
         <input type='password' name='password' placeholder='password' required
         
 />
-<p> Sign up for GetYourPiZZa</p>
+<Link to={`/SignUp`} >
+<p> Sign up for GetYourPiZZa</p> </Link>
         <button>SIGN IN</button>
       </form>
     </section>

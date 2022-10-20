@@ -179,6 +179,52 @@
 .sign-in button:active {
   filter: brightness(0.5);
 }
+/* Sign-Up */
+.sign-up {
+  display: grid;
+  place-content: center;
+ margin-top: 50px;
+  height: 100%;
+}
+.sign-up h1{
+  font-weight: 900;
+  font-size: xx-large;
+  display: grid;
+  place-content: center;
+  margin: 20px;
+ 
+}
+
+.sign-up form {
+  display: grid;
+  gap: 1rem;
+}
+.sign-up label{
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 10px;
+}
+.sign-up input {
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid royalblue;
+}
+
+.sign-up button {
+  color: white;
+  background-color: royalblue;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.sign-up button:hover {
+  filter: brightness(1.5);
+}
+
+.sign-up button:active {
+  filter: brightness(0.5);
+}
 /* menu */
 .pizza-item{
   display: grid;

@@ -5,9 +5,10 @@ import { Home } from './Pages/Home'
 import { About } from './Pages/About'
 import { SignIn } from './Pages/SignIn'
 import { useState, useEffect } from 'react'
-import { Order } from './Pages/Order'
+// import { Order } from './Pages/Order'
 import { Menu } from './Pages/Menu'
 import { PizzaDetails } from './Pages/PizzaDetails'
+import SignUp from './Pages/SignUp'
 
 export default function App () {
   const [currentUser, setCurrentUser] = useState(null)
@@ -46,7 +47,7 @@ export default function App () {
     <Header />
     <Routes>   
       <Route path='/home' element={<Home />} />
-       <Route path='/home' element={currentUser ? <Home/> : <Navigate to='/signIn'/>} />
+       {/* <Route path='/home' element={currentUser ? <Home/> : <Navigate to='/signIn'/>} /> */}
     <Route path='/about' element={<About />} />
     <Route
             path='/products/:id'
@@ -57,6 +58,8 @@ export default function App () {
 
 
     <Route path='/signIn' element={<SignIn signIn={SignIn} />} />
+    <Route path='/signUp' element={<SignUp  />} />
+
 
 
     </Routes>
