@@ -13,7 +13,10 @@ export function Order() {
         .then((rsp) => rsp.json())
         .then((data) => setCartItems(data));
     }, []);
-
+    let total = 0
+    for (let item of cartItems) {
+      total += item.quantity * item.pizza.prices
+    }
   return (
     <div className="cart-container">
       <div className="cart-row"></div>
@@ -29,12 +32,12 @@ export function Order() {
                 <span className="cart-varient">{item.pizza.type}</span>
               </div>
               <div className="cart-body">
-                <img src={item.pizza.image} alt="pizzzaaa here" />
+                <img src={item.pizza.image} alt="pizzzaaa here" width={100} />
               </div>
               <div className="cart-footer">
                 <div className="cart-footer-top">
                   <p className="cart-price">
-                    Price: 4 * 10.3.toFixed(2) = $200.toFixed(2)
+                    Price:  {item.quantity} * {(item.pizza.prices).toFixed(2)}
                   </p>
                 </div>
                 <div className="cart-footer-bottom">
@@ -42,12 +45,12 @@ export function Order() {
                     <p onClick={() => {}} />
                   </div>
                   <div className="cart-footer-bottom-right">
-                    <p>
+                    {/* <p>
                       Quantity:
-                      <p onClick={() => {}} />
-                      <span className="quantity">3333</span>
-                      <p onClick={() => {}} />
-                    </p>
+                      <span onClick={() => {}} >+</span>
+                      <span className="quantity">{item.quantity}</span>
+                      <span onClick={(quantity) => {quantity-1}} >- </span>
+                    </p> */}
                   </div>
                 </div>
               </div>
@@ -56,7 +59,7 @@ export function Order() {
         </div>
         <div className="cart-col">
           <div className="cartTotal">
-            <h2 className="totalprice">Total Price: $2344</h2>
+            <h2 className="totalprice">Total Price: £{total.toFixed(2)}</h2>
         
           </div>
         </div>

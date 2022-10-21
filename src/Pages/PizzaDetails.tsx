@@ -6,19 +6,17 @@ type CartItem={
   pizzaId: number,
   userId:number,
 }
-export function PizzaDetails({ setError }) {
+export function PizzaDetails({ setError , currentUser}) {
   const [pizza, setPizza] = useState<Pizza | null>(null);
   const params = useParams();
-  const [cartItem, setCartItem] = useState<CartItem | null>(null);;
+  const [cartItem, setCartItem] = useState<CartItem | null>(null);
   const [quantity, setQuantity] = useState<Number>(1);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setInterval(()=>{
     fetch(`http://localhost:4000/pizza/${params.id}`)
       .then((resp) => resp.json())
       .then((pizzaFromServer) => setPizza(pizzaFromServer));
-    }, 1000)
   }, []);
   if (pizza === null) return <h2>Loading...</h2>;
   return (
@@ -29,12 +27,12 @@ export function PizzaDetails({ setError }) {
         <div className="detail-container">
           <h2>{pizza.title}</h2>
           <p className="detail-description">{pizza.description}</p>
-          <p> Type: {pizza.type}</p>
+          <p className="detail-type"> Type: {pizza.type}</p>
           <h4 className="detail-price">Price: {pizza.prices}$</h4>
         </div>
       </div>
-
-      <label htmlFor="varients" className="detail-varients">
+<div className="detail-varients">
+      <label htmlFor="varients" className="varients">
         Choose a varients:
       </label>
       <select id="cars">
@@ -58,6 +56,7 @@ export function PizzaDetails({ setError }) {
             body: JSON.stringify({
               pizzaId: pizza.id,
               quantity: quantity,
+              userId: currentUser.id
             }),
           })
             .then((resp) => resp.json())
@@ -74,6 +73,7 @@ export function PizzaDetails({ setError }) {
         Add to cart
       </button>
       {/* </Link> */}
+    </div>
     </div>
   );
 }

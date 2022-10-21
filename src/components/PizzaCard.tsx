@@ -4,7 +4,7 @@ export function PizzaCard({pizza} ){
         <li className="pizza">
         <Link to={`/products/${pizza.id}` }style={{textDecoration:`none`}}>
         <article className="pizza-item">
-       <img src={`${pizza.image}`} alt={pizza.name}  width="130"/>
+       <img src={`${pizza.image}`} alt={pizza.name}  width="100"/>
        <h4>{pizza.title}</h4>
        <h2>{pizza.prices}$</h2>
      </article>

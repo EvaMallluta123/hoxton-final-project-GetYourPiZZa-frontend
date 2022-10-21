@@ -57,13 +57,13 @@ navigate("/signIn");
     <Route path='/about' element={<About />} />
     <Route
             path='/products/:id'
-            element={<PizzaDetails  setError/>}
+            element={<PizzaDetails currentUser={currentUser} setError={setError}/>}
           />
     <Route path='/orders' element={<Order />} />
     <Route path='/menu' element={<Menu />} />
 
 
-    <Route path='/signIn' element={<SignIn  />} />
+    <Route path='/signIn' element={<SignIn curentUser={currentUser} setCurrentUser={setCurrentUser} />} />
     <Route path='/signUp' element={<SignUp  />} />
     <Route path='/signUp' element={<PageNotFound  />} />
 
