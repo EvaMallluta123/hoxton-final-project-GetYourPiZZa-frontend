@@ -32,7 +32,7 @@ export function Order() {
                 <span className="cart-varient">{item.pizza.type}</span>
               </div>
               <div className="cart-body">
-                <img src={item.pizza.image} alt="pizzzaaa here" width={100} />
+                <img src={item.pizza.image} alt="pizzzaaa here"  />
               </div>
               <div className="cart-footer">
                 <div className="cart-footer-top">

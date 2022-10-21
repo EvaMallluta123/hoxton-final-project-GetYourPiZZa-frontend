@@ -65,7 +65,7 @@ export function PizzaDetails({ setError , currentUser}) {
                 alert(data.errors);
               } else {
                 setCartItem(data);
-                // navigate("/orders");
+                navigate("/orders");
               }
             });
         }}

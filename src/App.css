@@ -345,10 +345,10 @@ margin: 10px;
 
 .cart-card {
   position: relative;
-  width: 300px;
+  width: 250px;
   height: auto;
   box-shadow: 0 0 10px var(--header_color);
-  margin: 0 80px 80px 0;
+  margin: 0 60px 60px 0;
   border-radius: 5px;
 }
 
@@ -380,7 +380,7 @@ margin: 10px;
 
 .cart-body {
   position: relative;
-  margin: 150px 0;
+  margin: 100px 30;
   display: flex;
   justify-content: center;
 }
@@ -444,20 +444,3 @@ margin: 10px;
   text-align: center;
 }
 
-.cartTotal button {
-  background-color: #2c3e50;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  display: block;
-  margin: 0 auto;
-  letter-spacing: 1.4px;
-  transition: all 0.5s;
-}
-
-.cartTotal button:hover {
-  background-color: var(--header_color_content);
-}
