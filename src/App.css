@@ -47,6 +47,16 @@
   margin-left: 10px;
   color: var(--header_color_content);
 }
+.signout{
+  display: grid;
+  place-content: center;
+  margin-left: 90px;
+}
+.signout button{
+  color: var(--header_color_content);
+  background-color: var(--header_color);
+  border: 3px solid var(--header_color_content);
+}
 /* Home */
 .home {
   display: grid;
@@ -149,7 +159,7 @@
 .sign-in {
   display: grid;
   place-content: center;
- margin-top: 100px;
+  margin-top: 100px;
   height: 100%;
 }
 
@@ -183,23 +193,22 @@
 .sign-up {
   display: grid;
   place-content: center;
- margin-top: 50px;
+  margin-top: 50px;
   height: 100%;
 }
-.sign-up h1{
+.sign-up h1 {
   font-weight: 900;
   font-size: xx-large;
   display: grid;
   place-content: center;
   margin: 20px;
- 
 }
 
 .sign-up form {
   display: grid;
   gap: 1rem;
 }
-.sign-up label{
+.sign-up label {
   display: grid;
   grid-template-columns: auto auto;
   margin-top: 10px;
@@ -226,7 +235,7 @@
   filter: brightness(0.5);
 }
 /* menu */
-.pizza-item{
+.pizza-item {
   display: grid;
   grid-template-rows: 1fr auto;
   grid-row-gap: 2rem;
@@ -234,15 +243,196 @@
   padding: 1rem;
   place-items: center;
   background-color: var(--header_color);
+ margin: 0px 19px;
 }
-.pizza-item h4{
+.pizza-item h4 {
   color: rgb(37, 37, 37);
 }
-.pizza-ul{
-display: grid;
+.pizza-ul {
+  display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   justify-content: center;
   gap: 3rem;
   margin-top: 20px;
- list-style: none;
+  list-style: none;
+}
+/* detail-section */
+.detail-section {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3rem;
+}
+.detail-section img{
+  display: grid;
+  margin-top: 40px;
+  width: 500px;
+  height: 200px;
+  object-fit: contain;
+  margin-left: 15px;
+
+}
+.detail-container {
+margin-top: 40px;
+
+}
+.detail-container h2{
+  display: grid;
+  place-content: center;
+}
+.detail-description{
+  display: grid;
+  place-content: center;
+  /* margin-top: 10px; */
+  margin:10px ;
+}
+.detail-price{
+  display: grid;
+  margin: 10px;
+  margin-right: 70px;
+  place-content: end;
+  color: var(--header_color_content);
+}
+.detail-varients{
+  margin-left: 600px;
+}
+/* Order */
+.cart-row:nth-child(2) h1 {
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 2px;
+}
+
+.cart-row:nth-child(3) {
+  display: flex;
+  padding: 80px 25px;
+}
+
+.cart-row:nth-child(3) .cart-col:first-child {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cart-row:nth-child(3) .cart-col:last-child {
+  flex: 1;
+}
+
+.cart-card {
+  position: relative;
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 10px var(--header_color);
+  margin: 0 80px 80px 0;
+  border-radius: 5px;
+}
+
+.cart-header {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+
+.cart-subTitle {
+  letter-spacing: 1.3px;
+  position: absolute;
+  text-transform: uppercase;
+  top: -20px;
+  left: -20px;
+  background-color: var(--header_color);
+  padding: 2px 10px;
+}
+
+.cart-varient {
+  letter-spacing: 1.3px;
+  position: absolute;
+  text-transform: uppercase;
+  top: -15px;
+  right: -20px;
+  background-color: var(--header_color);
+  padding: 2px 10px;
+}
+
+.cart-body {
+  position: relative;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-body img {
+  width: 80%;
+  height: auto;
+}
+
+.cart-price {
+  text-align: center;
+}
+
+.cart-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 10px 0;
+  position: relative;
+}
+
+.cart-footer-bottom-left {
+  position: absolute;
+  bottom: 0px;
+  left: -20px;
+}
+
+.cart-footer-bottom-left svg {
+  font-size: 20px;
+  color:var(--header_color_content);
+  background-color: var(--header_color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-footer-bottom-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.cart-footer-bottom-right p {
+  font-size: 18px;
+  letter-spacing: 1.4px;
+  margin-right: 5px;
+}
+
+.cart-footer-bottom-right p span {
+  margin: 0 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart-footer-bottom-right p svg {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.cartTotal h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cartTotal button {
+  background-color: #2c3e50;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto;
+  letter-spacing: 1.4px;
+  transition: all 0.5s;
+}
+
+.cartTotal button:hover {
+  background-color: var(--header_color_content);
 }

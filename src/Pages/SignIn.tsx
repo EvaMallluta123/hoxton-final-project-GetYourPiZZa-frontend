@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export function SignIn ({ signIn }) {
+export function SignIn () {
 const[currentUser, setCurrentUser]= useState(null)
 const navigate = useNavigate();
 

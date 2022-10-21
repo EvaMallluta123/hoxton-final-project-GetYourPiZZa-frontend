@@ -12,7 +12,7 @@ export function Menu() {
     console.log(menu)
     return(
 <section>
-        <ul className="products-ul">
+        <ul className="pizza-ul">
           {menu.map(pizza => (
             <PizzaCard key={pizza.id} pizza={pizza} />
           ))}

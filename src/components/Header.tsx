@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export function Header() {
+export function Header({signOut}) {
   const types = [
     {
       type:"home",
@@ -43,6 +43,11 @@ export function Header() {
             </Link>
           </li>
         ))}
+        <div className="signout">
+              <button onClick={()=>{
+               signOut()
+              }}>Sign Out</button>
+            </div>
       </ul>
     </header>
   );

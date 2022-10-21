@@ -5,13 +5,16 @@ import { Home } from './Pages/Home'
 import { About } from './Pages/About'
 import { SignIn } from './Pages/SignIn'
 import { useState, useEffect } from 'react'
-// import { Order } from './Pages/Order'
+import { Order } from './Pages/Order'
 import { Menu } from './Pages/Menu'
 import { PizzaDetails } from './Pages/PizzaDetails'
 import SignUp from './Pages/SignUp'
+import { PageNotFound } from './PageNotFound'
 
 export default function App () {
   const [currentUser, setCurrentUser] = useState(null)
+  const navigate = useNavigate();
+  const [error, setError] = useState<null | Array<string>>(null);
 
   function signIn (data) {
     setCurrentUser(data.user)
@@ -21,6 +24,9 @@ export default function App () {
   function signOut () {
     setCurrentUser(null)
     localStorage.removeItem('token')
+navigate("/signIn");
+
+
   }
 
   useEffect(() => {
@@ -44,21 +50,23 @@ export default function App () {
   return (
     <div className="App">
       <>
-    <Header />
+    <Header signOut={signOut} />
     <Routes>   
       <Route path='/home' element={<Home />} />
        {/* <Route path='/home' element={currentUser ? <Home/> : <Navigate to='/signIn'/>} /> */}
     <Route path='/about' element={<About />} />
     <Route
             path='/products/:id'
-            element={<PizzaDetails  />}
+            element={<PizzaDetails  setError/>}
           />
-    {/* <Route path='/about' element={<Order />} /> */}
+    <Route path='/orders' element={<Order />} />
     <Route path='/menu' element={<Menu />} />
 
 
-    <Route path='/signIn' element={<SignIn signIn={SignIn} />} />
+    <Route path='/signIn' element={<SignIn  />} />
     <Route path='/signUp' element={<SignUp  />} />
+    <Route path='/signUp' element={<PageNotFound  />} />
+
 
 
 
